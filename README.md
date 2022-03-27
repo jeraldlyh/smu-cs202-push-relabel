@@ -2,7 +2,7 @@
 > Push relabel is an algorithm that computes maximum flow in a flow network. It's considered one of the most efficient maximum flow algorithms that is able to achieve O(V^E) time complexity which is asymptopically more efficient than O(VE^2) Edmonds-Karp algorithm that adopts breadth-first search (BFS). ([Source](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm))
 
 ## Visualization
-[Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer) is used in this demonstration to better visualize the underlying implementation and data structure of *Push-Relabel* algorithm.
+[Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer) is used in this demonstration to better visualize the underlying implementation and data structure of *Push-Relabel* algorithm. Vertices are displayed with labels (Height : Excess Flow)
 
 **Graph Color Legend**
 - Red - Adjacent vertex that is selected to receive excess flow
@@ -11,6 +11,9 @@
 - Light Yellow - Adjacent vertices of the currently selected vertex
 - Light Pink - Source vertex
 - Orange - Sink vertex
+
+**Demo**
+<img src="./images/MaxFlow.gif" alt="Demo" />
 
 ## Setup
 Since this application relies heavily on *Debug Visualizer*, breakpoints are required to be set in order to enter debug mode and notice what happens in each step of the algorithm.
