@@ -26,7 +26,7 @@ class Vertex:
 
         return {
             "id": str(self.id),
-            "label": f"{self.id}:{str(self.excessFlow)}",
+            "label": f"{self.height}:{str(self.excessFlow)}",
             "color": color,
         }
 
