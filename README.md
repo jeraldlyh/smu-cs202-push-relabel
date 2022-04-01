@@ -40,3 +40,5 @@ Since this application relies heavily on *Debug Visualizer*, breakpoints are req
 - [Felice Png](https://github.com/felicepng)
 - [Jerald Lim](https://github.com/jeraldlyh)
 - [Yvonne Lim](https://github.com/yvonnelhs)
+- [Christopher](https://github.com/ChristopherHChang)
+- [Bryan](https://github.com/BryanTZY)
