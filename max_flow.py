@@ -153,7 +153,7 @@ def createBackwardEdge(u: int, v: int, capacity: int, flow: int) -> None:
     updateGraph()
 
 
-def hasExcessFlow() -> int:
+def hasExcessFlow(sourceId: int, sinkId: int) -> int:
     """
     Searches for excess flow in the graph to determine the subsequent vertex that requires
     either push() or relabel()
@@ -165,7 +165,7 @@ def hasExcessFlow() -> int:
 
     for index, vertex in enumerate(VERTICES):
         # Excess flow on sink vertex is not considered
-        if vertex.id == SOURCE_ID or vertex.id == SINK_ID:
+        if vertex.id == sourceId or vertex.id == sinkId:
             continue
 
         if vertex.excessFlow > 0:
@@ -295,7 +295,7 @@ def getMaxFlow(sourceId: int, sinkId: int) -> int:
         int: Representing the maximum flow of a graph
     """
     preFlow(sourceId)
-    vertexId = hasExcessFlow()
+    vertexId = hasExcessFlow(sourceId, sinkId)
 
     while vertexId != -1:
         if not push(vertexId):
@@ -303,7 +303,7 @@ def getMaxFlow(sourceId: int, sinkId: int) -> int:
             # same height as all adjacent vertices
             relabel(vertexId)
 
-        vertexId = hasExcessFlow()
+        vertexId = hasExcessFlow(sourceId, sinkId)
 
     # Sink is located at the last vertex in the array,
     # any excess flow in the vertex will be considered the max flow
