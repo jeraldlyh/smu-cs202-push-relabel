@@ -24,7 +24,7 @@ Since this application relies heavily on *Debug Visualizer*, breakpoints are req
 - [Line 284](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L284) - Shows the current state of the graph prior to persistent updates
 - [Line 301](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L301) - Reflects the changes of the graphs till none of the vertices have excess flow
 - [Line 304](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L304) - Shows which node is selected for relabelling
-- [Line 348](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L348) - Shows the final flow network graph with its corresponding residual graph
+- [Line 349](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L349) - Shows the final max flow network graph with its corresponding residual graph
 
 ## Steps to Replicate
 1. Install [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)

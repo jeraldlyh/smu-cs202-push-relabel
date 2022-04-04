@@ -148,7 +148,7 @@ def createBackwardEdge(u: int, v: int, capacity: int, flow: int) -> None:
         capacity (int): Maximum flow that the edge can transfer
     """
 
-    edge = Edge(u, v, capacity, flow, True)
+    edge = Edge(u, v, flow, 0, True)
     EDGES.append(edge)
     updateGraph()
 
@@ -338,12 +338,12 @@ def setGraphSettings(sourceId: int, sinkId: int, numOfVertices: int) -> None:
 if __name__ == "__main__":
     SOURCE_ID, SINK_ID, NUM_VERTICES = 0, 5, 6
     setGraphSettings(SOURCE_ID, SINK_ID, NUM_VERTICES)
-    addEdge(0, 1, 10)
-    addEdge(1, 2, 5)
-    addEdge(0, 3, 8)
-    addEdge(1, 3, 2)
+    addEdge(0, 1, 13)
+    addEdge(0, 2, 10)
+    addEdge(2, 1, 3)
+    addEdge(1, 5, 7)
+    addEdge(1, 3, 6)
     addEdge(3, 4, 10)
-    addEdge(4, 2, 8)
-    addEdge(4, 5, 10)
-    addEdge(2, 5, 7)
+    addEdge(4, 5, 5)
+    addEdge(1, 5, 7)
     print(getMaxFlow(SOURCE_ID, SINK_ID))

@@ -42,8 +42,24 @@ def test_case_three():
     max_flow = getMaxFlow(SOURCE_ID, SINK_ID)
     assert max_flow == 15
 
+def test_case_four():
+    SOURCE_ID, SINK_ID, NUM_VERTICES = 0, 5, 6
+    setGraphSettings(SOURCE_ID, SINK_ID, NUM_VERTICES)
+    addEdge(0, 1, 13)
+    addEdge(0, 2, 10)
+    addEdge(2, 1, 3)
+    addEdge(1, 5, 7)
+    addEdge(1, 3, 6)
+    addEdge(3, 4, 10)
+    addEdge(4, 5, 5)
+    addEdge(1, 5, 7)
+
+    max_flow = getMaxFlow(SOURCE_ID, SINK_ID)
+    assert max_flow == 12
+
 
 if __name__ == "__main__":
-    test_case_one()
+    # test_case_one()
     test_case_two()
-    test_case_three()
+    # test_case_three()
+    # test_case_four()
