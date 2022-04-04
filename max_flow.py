@@ -273,6 +273,8 @@ def relabel(u: int) -> None:
             if edge.flow == edge.capacity:
                 continue
 
+            relabelVertex(u)
+
             destinationVertex = VERTICES[edge.v]
             # Retrieve the minimum height of all adjacent vertices
             # and update the height current vertex
@@ -282,6 +284,7 @@ def relabel(u: int) -> None:
                 currentVertex.height = minHeight + 1
 
                 updateGraph()
+    relabelVertex(u)
 
 
 def getMaxFlow(sourceId: int, sinkId: int) -> int:
@@ -309,6 +312,9 @@ def getMaxFlow(sourceId: int, sinkId: int) -> int:
     # any excess flow in the vertex will be considered the max flow
     return VERTICES[sinkId].excessFlow
 
+def relabelVertex(vertexId: int) -> None:
+    VERTICES[vertexId].isRelabel = not VERTICES[vertexId].isRelabel
+    updateGraph()
 
 def setGraphSettings(sourceId: int, sinkId: int, numOfVertices: int) -> None:
     """
@@ -338,14 +344,12 @@ def setGraphSettings(sourceId: int, sinkId: int, numOfVertices: int) -> None:
 if __name__ == "__main__":
     SOURCE_ID, SINK_ID, NUM_VERTICES = 0, 5, 6
     setGraphSettings(SOURCE_ID, SINK_ID, NUM_VERTICES)
-    addEdge(0, 1, 16)
-    addEdge(0, 2, 13)
-    addEdge(1, 2, 10)
-    addEdge(2, 1, 4)
-    addEdge(1, 3, 12)
-    addEdge(2, 4, 14)
-    addEdge(3, 2, 9)
-    addEdge(3, 5, 20)
-    addEdge(4, 3, 7)
-    addEdge(4, 5, 4)
+    addEdge(0, 1, 10)
+    addEdge(1, 2, 5)
+    addEdge(0, 3, 8)
+    addEdge(1, 3, 2)
+    addEdge(3, 4, 10)
+    addEdge(4, 2, 8)
+    addEdge(4, 5, 10)
+    addEdge(2, 5, 7)
     print(getMaxFlow(SOURCE_ID, SINK_ID))

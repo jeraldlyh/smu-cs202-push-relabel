@@ -5,7 +5,8 @@
 [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer) is used in this demonstration to better visualize the underlying implementation and data structure of *Push-Relabel* algorithm. Vertices are displayed with labels (Height : Excess Flow)
 
 **Graph Color Legend**
-- Red - Adjacent vertex that is selected to receive excess flow
+- Red - Adjacent vertex that's selected to receive excess flow
+- Light Gray - Vertex that's performing relabel
 - Light Blue - Normal vertex in the graph
 - Light Green - Currently selected vertex
 - Light Yellow - Adjacent vertices of the currently selected vertex
@@ -21,10 +22,11 @@ Since this application relies heavily on *Debug Visualizer*, breakpoints are req
 **Breakpoints**
 - [Line 235](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L235) - Selects the destination vertex
 - [Line 237](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L237) - Shows which vertex has been selected with its adjacent vertices
-- [Line 284](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L284) - Shows the current state of the graph prior to persistent updates
+- [Line 287](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L287) - Shows which vertex has performed relabel to increase its height
 - [Line 301](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L301) - Reflects the changes of the graphs till none of the vertices have excess flow
-- [Line 304](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L304) - Shows which node is selected for relabelling
-- [Line 349](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L349) - Shows the final max flow network graph with its corresponding residual graph
+- [Line 304](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L304) - Shows which node is selected for relabeling
+- [Line 307](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L307) - Shows the current state of the graph prior to relabeling
+- [Line 355](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L355) - Shows the final max flow network graph with its corresponding residual graph
 
 ## Steps to Replicate
 1. Install [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)

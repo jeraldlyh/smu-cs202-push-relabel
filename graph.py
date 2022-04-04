@@ -10,11 +10,14 @@ class Vertex:
         self.isTraverse = False
         self.isAdjacent = False
         self.isSelected = False
+        self.isRelabel = False
 
     def toJSON(self):
         color = "lightblue"  # Normal vertex
         if self.isSelected:
             color = "red"  # Adjacent vertex that is selected to receive excess flow
+        elif self.isRelabel:    # Peforming relabel on vertex
+            color = "lightgray"
         elif self.isTraverse:
             color = "lightgreen"  # Current selected vertex
         elif self.isAdjacent:
