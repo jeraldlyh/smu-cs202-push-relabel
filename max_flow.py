@@ -197,7 +197,7 @@ def preFlow(sourceId: int) -> None:
 
             # Creating a backward edge in the residual graph from
             # adjacent vertices back to source
-            createBackwardEdge(destinationId, sourceId, edge.capacity, 0)
+            createBackwardEdge(destinationId, sourceId, 0, edge.capacity)
 
 
 def push(u: int) -> bool:
@@ -220,7 +220,7 @@ def push(u: int) -> bool:
         if edge.u == u:
             # Push is impossible since the flow of
             # current edge has reached its max capacity
-            if edge.flow == edge.capacity:
+            if edge.flow == edge.capacity and not edge.isBackward:
                 continue
 
             sourceVertex = VERTICES[u]
@@ -338,12 +338,14 @@ def setGraphSettings(sourceId: int, sinkId: int, numOfVertices: int) -> None:
 if __name__ == "__main__":
     SOURCE_ID, SINK_ID, NUM_VERTICES = 0, 5, 6
     setGraphSettings(SOURCE_ID, SINK_ID, NUM_VERTICES)
-    addEdge(0, 1, 13)
-    addEdge(0, 2, 10)
-    addEdge(2, 1, 3)
-    addEdge(1, 5, 7)
-    addEdge(1, 3, 6)
-    addEdge(3, 4, 10)
-    addEdge(4, 5, 5)
-    addEdge(1, 5, 7)
+    addEdge(0, 1, 16)
+    addEdge(0, 2, 13)
+    addEdge(1, 2, 10)
+    addEdge(2, 1, 4)
+    addEdge(1, 3, 12)
+    addEdge(2, 4, 14)
+    addEdge(3, 2, 9)
+    addEdge(3, 5, 20)
+    addEdge(4, 3, 7)
+    addEdge(4, 5, 4)
     print(getMaxFlow(SOURCE_ID, SINK_ID))
