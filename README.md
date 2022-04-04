@@ -19,15 +19,18 @@
 Since this application relies heavily on *Debug Visualizer*, breakpoints are required to be set in order to enter debug mode and notice what happens in each step of the algorithm.
 
 **Breakpoints**
+- [Line 235](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L235) - Selects the destination vertex
 - [Line 237](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L237) - Shows which vertex has been selected with its adjacent vertices
-- [Line 300](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L300) - Reflects the changes of the graphs till none of the vertices have excess flow
+- [Line 284](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L284) - Shows the current state of the graph prior to persistent updates
+- [Line 301](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L301) - Reflects the changes of the graphs till none of the vertices have excess flow
+- [Line 304](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L304) - Shows which node is selected for relabelling
 - [Line 348](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py#L348) - Shows the final flow network graph with its corresponding residual graph
 
 ## Steps to Replicate
 1. Install [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)
 2. ```git clone https://github.com/jeraldlyh/smu-cs202-push-relabel```
 3. Select [max_flow.py](https://github.com/jeraldlyh/smu-cs202-push-relabel/blob/master/max_flow.py)
-4. Set the respective breakpoints
+4. Set the respective breakpoints as shown in the [setup](#setup)
 5. Ctrl + Shift + P -> Debug: Start Debugging
 6. Ctrl + Shift + P -> Debug Visualizer: New View
 7. Enter *GRAPH* into input box

@@ -191,7 +191,7 @@ def preFlow(sourceId: int) -> None:
         if edge.u == sourceId:
             edge.flow = edge.capacity
 
-            # Set excess flow of adjcent vertices to max capacity
+            # Set excess flow of adjacent vertices to max capacity
             destinationId = edge.v
             VERTICES[destinationId].excessFlow += edge.flow
 
