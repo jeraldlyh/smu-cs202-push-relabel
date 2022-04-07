@@ -284,7 +284,10 @@ def relabel(u: int) -> None:
                 currentVertex.height = minHeight + 1
 
                 updateGraph()
-    relabelVertex(u)
+    
+    if VERTICES[u].isRelabel:
+        VERTICES[u].isRelabel = False
+        updateGraph()
 
 
 def getMaxFlow(sourceId: int, sinkId: int) -> int:
